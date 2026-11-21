@@ -1,0 +1,140 @@
+[
+  {
+    "name": "BGE-small",
+    "items": [
+      {
+        "name": "Atomic sentences",
+        "description": "Both plans observe 23 of 64 states. Lower normalized mean squared error indicates a closer reconstruction.",
+        "rows": [
+          {
+            "label": "Star23 / Cycle23 · NMSE",
+            "value": "0.01238 / 0.02657"
+          },
+          {
+            "label": "Relative error reduction",
+            "value": "53.39%"
+          },
+          {
+            "label": "Balanced nDCG@5 · Star23 / Cycle23",
+            "value": "0.29019 / 0.28975"
+          },
+          {
+            "label": "Paired test worlds",
+            "value": "2,048"
+          }
+        ],
+        "bars": [
+          {
+            "label": "Star23 · exact-state retrieval",
+            "value": 99.01942628802728
+          },
+          {
+            "label": "Cycle23 · exact-state retrieval",
+            "value": 96.00287928725723
+          }
+        ]
+      },
+      {
+        "name": "Compressed prose",
+        "description": "Both plans observe 23 of 64 states. Lower normalized mean squared error indicates a closer reconstruction.",
+        "rows": [
+          {
+            "label": "Star23 / Cycle23 · NMSE",
+            "value": "0.31746 / 0.72291"
+          },
+          {
+            "label": "Relative error reduction",
+            "value": "56.09%"
+          },
+          {
+            "label": "Balanced nDCG@5 · Star23 / Cycle23",
+            "value": "0.28621 / 0.28585"
+          },
+          {
+            "label": "Paired test worlds",
+            "value": "2,048"
+          }
+        ],
+        "bars": [
+          {
+            "label": "Star23 · exact-state retrieval",
+            "value": 93.55156060421089
+          },
+          {
+            "label": "Cycle23 · exact-state retrieval",
+            "value": 78.09512398459687
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "E5-small",
+    "items": [
+      {
+        "name": "Atomic sentences",
+        "description": "Both plans observe 23 of 64 states. Lower normalized mean squared error indicates a closer reconstruction.",
+        "rows": [
+          {
+            "label": "Star23 / Cycle23 · NMSE",
+            "value": "0.01514 / 0.02367"
+          },
+          {
+            "label": "Relative error reduction",
+            "value": "36.03%"
+          },
+          {
+            "label": "Balanced nDCG@5 · Star23 / Cycle23",
+            "value": "0.28592 / 0.28581"
+          },
+          {
+            "label": "Paired test worlds",
+            "value": "2,048"
+          }
+        ],
+        "bars": [
+          {
+            "label": "Star23 · exact-state retrieval",
+            "value": 98.1487447565254
+          },
+          {
+            "label": "Cycle23 · exact-state retrieval",
+            "value": 96.79715127655946
+          }
+        ]
+      },
+      {
+        "name": "Compressed prose",
+        "description": "Both plans observe 23 of 64 states. Lower normalized mean squared error indicates a closer reconstruction.",
+        "rows": [
+          {
+            "label": "Star23 / Cycle23 · NMSE",
+            "value": "0.29736 / 0.69517"
+          },
+          {
+            "label": "Relative error reduction",
+            "value": "57.22%"
+          },
+          {
+            "label": "Balanced nDCG@5 · Star23 / Cycle23",
+            "value": "0.29277 / 0.29312"
+          },
+          {
+            "label": "Paired test worlds",
+            "value": "2,048"
+          }
+        ],
+        "bars": [
+          {
+            "label": "Star23 · exact-state retrieval",
+            "value": 93.62767537434895
+          },
+          {
+            "label": "Cycle23 · exact-state retrieval",
+            "value": 77.82966729366422
+          }
+        ]
+      }
+    ]
+  }
+]

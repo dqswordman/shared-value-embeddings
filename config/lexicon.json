@@ -1,0 +1,75 @@
+{
+  "CAL": {
+    "names": [
+      "Clara",
+      "Diego",
+      "Farah",
+      "Hugo",
+      "Irene",
+      "Jasper",
+      "Leila",
+      "Mateo"
+    ],
+    "cities": [
+      "Bremen",
+      "Dakar",
+      "Denver",
+      "Genoa",
+      "Hanoi",
+      "Jaipur",
+      "Leeds",
+      "Riga"
+    ]
+  },
+  "TEST": {
+    "names": [
+      "Nora",
+      "Oscar",
+      "Priya",
+      "Rafael",
+      "Selena",
+      "Tobias",
+      "Uma",
+      "Victor",
+      "Wanda",
+      "Xavier",
+      "Yuki",
+      "Zora"
+    ],
+    "cities": [
+      "Accra",
+      "Athens",
+      "Bergen",
+      "Boston",
+      "Dublin",
+      "Florence",
+      "Lisbon",
+      "Milan",
+      "Nairobi",
+      "Prague",
+      "Seoul",
+      "Turin"
+    ]
+  },
+  "historical_excluded": {
+    "names": [
+      "Ada",
+      "Bruno",
+      "Celia",
+      "Darius",
+      "Elena",
+      "Alice",
+      "Grace",
+      "Hector"
+    ],
+    "cities": [
+      "Oslo",
+      "Lima",
+      "Kyoto",
+      "Perth",
+      "Cairo",
+      "Sofia",
+      "Bern"
+    ]
+  }
+}

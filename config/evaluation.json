@@ -1,0 +1,502 @@
+{
+  "models": [
+    {
+      "id": "bge_small",
+      "repository": "BAAI/bge-small-en-v1.5",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "document_prefix": "",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "pooling": "last_hidden_CLS",
+      "card": "https://huggingface.co/BAAI/bge-small-en-v1.5/blob/5c38ec7c405ec4b44b94cc5a9bb96e735b38267a/README.md"
+    },
+    {
+      "id": "e5_small",
+      "repository": "intfloat/e5-small-v2",
+      "revision": "ffb93f3bd4047442299a41ebb6fa998a38507c52",
+      "document_prefix": "passage: ",
+      "query_prefix": "query: ",
+      "pooling": "attention_mask_mean_all_nonpadding_tokens_including_special",
+      "card": "https://huggingface.co/intfloat/e5-small-v2/blob/ffb93f3bd4047442299a41ebb6fa998a38507c52/README.md"
+    }
+  ],
+  "encoding": {
+    "dimension": 384,
+    "dtype": "float32",
+    "eval": true,
+    "inference": true,
+    "attention": "eager",
+    "tf32": false,
+    "algebra_and_ranking_dtype": "float64",
+    "tokenizer": "matching frozen revision, whole-text tokenization with actual attention mask",
+    "max_length": 512,
+    "silent_truncation_allowed": false,
+    "default_batch": 128,
+    "batch_may_change_for_memory": true,
+    "raw_h_and_z_same_forward": true,
+    "z": "h / L2_norm(h)",
+    "all_native_document_query_normalization": "Convert FP32 raw-h to FP64 before norm and L2; also for NATIVE reference",
+    "query_cache_key": "model repo+revision, tokenizer, pooling, exact prefix+query text, dtype",
+    "old_fixed_5_token_slots_allowed_without_exact_token_equivalence": false,
+    "invalid_native_or_reconstruction": "Nonfinite or zero-norm rows are flagged; no epsilon zero-imputation. Repair only the affected computation, retain unrelated valid cells."
+  },
+  "task": {
+    "conditions": "config/conditions.json",
+    "relations": [
+      "L",
+      "Q",
+      "R"
+    ],
+    "relation_verbs": [
+      "lives",
+      "works",
+      "studies"
+    ],
+    "bit_labels": [
+      "a=L01",
+      "b=L23",
+      "c=Q01",
+      "d=Q23",
+      "e=R01",
+      "f=R23"
+    ],
+    "masks": [
+      32,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "native_states": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "origins": [
+      0,
+      21,
+      12,
+      25,
+      3,
+      22,
+      15,
+      26,
+      63,
+      42,
+      51,
+      38,
+      60,
+      41,
+      48,
+      37
+    ],
+    "origin_bits": [
+      "000000",
+      "010101",
+      "001100",
+      "011001",
+      "000011",
+      "010110",
+      "001111",
+      "011010",
+      "111111",
+      "101010",
+      "110011",
+      "100110",
+      "111100",
+      "101001",
+      "110000",
+      "100101"
+    ],
+    "relative_targets": [
+      15,
+      23,
+      27,
+      29,
+      30,
+      31,
+      39,
+      43,
+      45,
+      46,
+      47,
+      51,
+      53,
+      54,
+      55,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "relative_target_bits": [
+      "001111",
+      "010111",
+      "011011",
+      "011101",
+      "011110",
+      "011111",
+      "100111",
+      "101011",
+      "101101",
+      "101110",
+      "101111",
+      "110011",
+      "110101",
+      "110110",
+      "110111",
+      "111001",
+      "111010",
+      "111011",
+      "111100",
+      "111101",
+      "111110",
+      "111111"
+    ],
+    "target_rule": "absolute_state = origin XOR relative_target, HammingWeight(relative_target)>=4",
+    "views": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        1
+      ],
+      [
+        3,
+        0,
+        1,
+        2
+      ]
+    ],
+    "renderer_order": [
+      "ATOMIC",
+      "PROSE_COMPRESSED"
+    ],
+    "renderer_reference": "reference/query_reference.py::render",
+    "compressed_renderer_scope": "Expression stress with state-dependent compression, length and token counts. Analyze separately; it cannot rescue an ATOMIC failure or identify encoder-internal causality.",
+    "query_reference": "reference/query_reference.py::queries,qrels,rank_metrics",
+    "query_templates": {
+      "CAL": [
+        "Find a record where {clause}.",
+        "Find a record where {clause1} and {clause2}."
+      ],
+      "TEST": [
+        "Which record states that {clause}?",
+        "Which record states that {clause1} and {clause2}?"
+      ]
+    },
+    "gallery": "22 held-out relative targets in the same world, condition, view, renderer, origin; no anchors and no pooling across these dimensions",
+    "relevance": "Binary AND of every explicit fact in query; all matching target documents are relevant",
+    "rank": "FP64 cosine descending; absolute state ID ascending only for exact equality; no truth-based tie breaker",
+    "query_primary": "0.5*mean(48 same-entity two-fact queries)+0.5*mean(144 different-entity two-fact queries)",
+    "query_secondary": [
+      "Q1_ndcg5",
+      "Q2_same_ndcg5",
+      "Q2_different_ndcg5",
+      "balanced_P_at_1",
+      "balanced_AUC",
+      "tie_expected_ndcg5"
+    ],
+    "no_query_filtering_on_native_quality": true
+  },
+  "reconstruction": {
+    "reference": "reference/design_reference.py::q_coeff",
+    "mu_U": "sum_{V subset U} (-1)^(|U|-|V|) h(origin XOR mask(V))",
+    "phi_t": "1/8 - sum_{i in t} b_i/4 + sum_{{i,j} subset t} b_i*b_j/2",
+    "q": "mu_empty + sum_i b_i*mu_i + sum_{ij in E} b_i*b_j*mu_ij + sum_{t in T} phi_t(b)*mu_t",
+    "output_walsh_degree_max": 2,
+    "reanchor_at_origin": false,
+    "target_blind": "Each estimator reads only base, singleton, selected pair and selected triple anchors in its own origin, although native full cubes are cached for evaluation/reuse.",
+    "information_budget": "1+6+number_of_edges+number_of_triples, per origin; not the entire experiment's model forward count.",
+    "fixed_methods": [
+      {
+        "id": "STAR23",
+        "anchor_information_per_origin": 23,
+        "target_visible": false,
+        "design": "condition.E12 + condition.STAR"
+      },
+      {
+        "id": "CYCLE23",
+        "anchor_information_per_origin": 23,
+        "target_visible": false,
+        "design": "condition.E12 + condition.CYCLE"
+      },
+      {
+        "id": "STRUCTPAIR19",
+        "anchor_information_per_origin": 19,
+        "target_visible": false,
+        "candidate_id": "STRUCTPAIR19"
+      },
+      {
+        "id": "FULLPAIR22",
+        "anchor_information_per_origin": 22,
+        "target_visible": false,
+        "candidate_id": "FULLPAIR22"
+      },
+      {
+        "id": "NATIVE",
+        "anchor_information_per_origin": null,
+        "target_visible": true,
+        "design": "native h at each target; diagnostic, not a target-blind method"
+      },
+      {
+        "id": "Q2_NATIVE64",
+        "anchor_information_per_origin": 64,
+        "target_visible": true,
+        "design": "uniform 64-state Walsh projection degree <= 2; diagnostic, not a query upper bound"
+      }
+    ],
+    "method_labels": [
+      "STAR23",
+      "CYCLE23",
+      "STRUCTPAIR19",
+      "FULLPAIR22",
+      "NATIVE",
+      "Q2_NATIVE64",
+      "CAL_TRI70_G",
+      "CAL_TRI70_Q",
+      "CAL_PART21_G",
+      "CAL_PART21_Q",
+      "CAL_PART23_G",
+      "CAL_PART23_Q",
+      "CAL_PAIR21_G",
+      "CAL_PAIR21_Q",
+      "CAL_PAIRPLUS23_G",
+      "CAL_PAIRPLUS23_Q"
+    ],
+    "candidate_designs": "config/candidate_designs.json",
+    "candidate_family_counts": {
+      "TRI70": 70,
+      "PART21": 840,
+      "PART23": 90,
+      "PAIR21": 15,
+      "PAIRPLUS23": 20,
+      "FULLPAIR22": 1,
+      "STRUCTPAIR19": 1
+    }
+  },
+  "calibration": {
+    "group_by": [
+      "model",
+      "renderer",
+      "condition"
+    ],
+    "families": [
+      "TRI70",
+      "PART21",
+      "PART23",
+      "PAIR21",
+      "PAIRPLUS23"
+    ],
+    "objectives": [
+      "G",
+      "Q"
+    ],
+    "G": "minimum CAL mean world NMSE, average all 4 views x16 origins x22 targets",
+    "Q": "maximum CAL mean world balanced two-fact nDCG@5",
+    "G_tie": "sort by round(mean_NMSE,12), then candidate_id ascending",
+    "Q_tie": "sort by -round(mean_Q,12), round(mean_NMSE,12), candidate_id ascending",
+    "PART21_shortlist": "Score all840 on NMSE; in each of10 partitions take8 by G_tie; evaluate all80 on Q. G winner is minimum over840; Q winner is best among80. This is the fixed shortlist procedure, not a global840 query oracle.",
+    "Q_full_families": [
+      "TRI70",
+      "PART23",
+      "PAIR21",
+      "PAIRPLUS23"
+    ],
+    "freeze_all_240_before_TEST_selection_metrics": true,
+    "TEST_selection_allowed": false,
+    "identical_winners": "Reuse numerical computation; retain logical labels without counting independent evidence.",
+    "partial_family": "Do not silently select from a truncated family. Keep fixed methods and other fully evaluated families running; report this family incomplete."
+  },
+  "metrics": {
+    "G": "World NMSE; lower better",
+    "D": "For fixed model,world,renderer: mean over6conditions*4views*64states of ||h_cvs - mean_{s'=0..63}(h_cvs')||^2. Same D for every method, condition and origin of this world.",
+    "world_condition_NMSE": "mean over4views*16origins*22targets of ||q-h_target||^2, divided by common D; then conditions averaged equally.",
+    "D_invalid": "D==0 or nonfinite: normalized geometry undefined; keep raw MSE and independently valid query results; no arbitrary floor or zero-imputation.",
+    "raw_MSE": "squared L2 error summed across384 coordinates, then case mean; not divided by dimension",
+    "Q": "balanced two-fact nDCG@5; higher better; raw proportions in CSV, pp for differences only",
+    "DCG": "sum_{rank=1..5} binary_relevance_rank / log2(rank+1)",
+    "IDCG": "sum_{rank=1..min(5,n_relevant)} 1/log2(rank+1), using the exact same22-target gallery",
+    "R22": "secondary complete-state nearest-native identity retrieval among same22 targets; no comparison of absolute level with historical R384/R256",
+    "random_references": {
+      "Q1_ndcg5": 0.5,
+      "Q2_balanced_ndcg5": 0.27214158089635676,
+      "Q2_balanced_P1": 0.25,
+      "AUC": 0.5
+    },
+    "NATIVE_is_query_upper_bound": false
+  },
+  "statistics": {
+    "independent_unit": "TEST world; 2048 sampled lexical-set orbits",
+    "within_world": "Equal condition/view/origin weights, with fixed half-half two-fact query strata",
+    "bootstrap": {
+      "replicates": 10000,
+      "rng": "PCG64",
+      "seed": 2026110905,
+      "shared_indices": true,
+      "world_order": "world_id ascending",
+      "simultaneous": "max absolute standardized centered bootstrap error",
+      "quantile_method": "linear",
+      "zero_sd": "point interval for that series; exclude from division; critical=0 if all zero",
+      "ordinary": "2.5/97.5 percentile intervals for secondary summaries"
+    },
+    "primary_family": {
+      "size": 8,
+      "cross": [
+        "2models",
+        "2renderers",
+        "2contrasts"
+      ],
+      "contrasts": [
+        "CYCLE23_NMSE - STAR23_NMSE",
+        "STAR23_Q - CYCLE23_Q"
+      ]
+    },
+    "baseline_family": {
+      "size": 48,
+      "cross": [
+        "2models",
+        "2renderers",
+        "2metrics",
+        "6comparators"
+      ],
+      "G_comparators": [
+        "CAL_TRI70_G",
+        "CAL_PART21_G",
+        "CAL_PART23_G",
+        "CAL_PAIR21_G",
+        "CAL_PAIRPLUS23_G",
+        "FULLPAIR22"
+      ],
+      "Q_comparators": [
+        "CAL_TRI70_Q",
+        "CAL_PART21_Q",
+        "CAL_PART23_Q",
+        "CAL_PAIR21_Q",
+        "CAL_PAIRPLUS23_Q",
+        "FULLPAIR22"
+      ],
+      "direction": "comparator_NMSE-STAR_NMSE; STAR_Q-comparator_Q"
+    },
+    "family_coverage": "Two separate simultaneous95% families; not a joint56-comparison95% claim",
+    "missing": "Common complete worlds within each prespecified available family, report missing causes and actual n; unavailable entire series yields an availability-defined partial subfamily, never an effect-selected subset.",
+    "no_equivalence_margin": true,
+    "precision_planning": "Q only: n2048, paired SD .15/.30 and critical about3 imply halfwidth .994/1.989pp; assumptions, not assurance or stopping rule. NMSE precision is separately reported.",
+    "conditional_scope": "Conditional on frozen model checkpoints, word pools, templates, CAL sample and selected candidates; not repeated-training uncertainty."
+  },
+  "counts": {
+    "models": 2,
+    "renderers": 2,
+    "conditions": 6,
+    "views": 4,
+    "origins": 16,
+    "native_states_per_cube": 64,
+    "targets_per_origin": 22,
+    "CAL_worlds": 256,
+    "TEST_worlds": 2048,
+    "single_queries_per_world_condition": 24,
+    "same_entity_two_fact_queries_per_world_condition": 48,
+    "different_entity_two_fact_queries_per_world_condition": 144,
+    "all_queries_per_world_condition": 216,
+    "fixed_method_labels": 6,
+    "calibrated_method_labels": 10,
+    "all_method_labels": 16,
+    "CAL_document_model_rows": 1572864,
+    "TEST_document_model_rows": 12582912,
+    "all_document_model_rows": 14155776,
+    "query_unique_text_rows_both_models_upper_bound": 150240,
+    "CAL_selection_cells": 24,
+    "CAL_winner_records": 240,
+    "candidate_geometry_designs": 1037,
+    "CAL_functional_candidates_five_families_per_cell": 275,
+    "CAL_functional_all_numerical_designs_including_fixed_and_refs_per_cell": 279,
+    "TEST_target_rows_one_method_label": 69206016,
+    "TEST_target_rows_all_16_labels": 1107296256,
+    "TEST_query_rankings_all_16_labels": 10871635968,
+    "TEST_query_document_scores_all_16_labels": 239175991296,
+    "CAL_query_rankings_all_279_numerical_designs": 23696769024,
+    "CAL_query_document_scores_all_279_numerical_designs": 521328918528,
+    "TEST_unit_results_rows": 786432,
+    "primary_family": 8,
+    "baseline_family": 48,
+    "query_unique_text_rows_both_models_frozen_input": 150230,
+    "query_unique_text_rows_per_model_CAL": 12477,
+    "query_unique_text_rows_per_model_TEST": 62638
+  }
+}

@@ -1,0 +1,3 @@
+# Sources and attribution
+
+Wenzhang Du authored the finite directory, the generated text and query definitions, experiment code, figures and measurements. The frozen worlds and calibration/test identifiers are published with the results. BGE, E5 and Qwen were developed by their respective publishers. Their weights and software retain their upstream terms. [BGE-small-en-v1.5](https://huggingface.co/BAAI/bge-small-en-v1.5) · [E5-small-v2](https://huggingface.co/intfloat/e5-small-v2) · [Qwen3-Embedding-0.6B](https://huggingface.co/Qwen/Qwen3-Embedding-0.6B) · [Test configuration](config/evaluation.json)
