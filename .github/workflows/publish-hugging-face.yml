@@ -30,7 +30,7 @@ jobs:
         id: release
         shell: bash
         run: |
-          if curl --silent --fail https://api.github.com/repos/dqswordman/shared-value-embeddings/releases/tags/v1.0.0 > "$RUNNER_TEMP/release.json"; then
+          if curl --silent --fail https://api.github.com/repos/dqswordman/shared-value-embeddings/releases/tags/v1.0.1 > "$RUNNER_TEMP/release.json"; then
             echo "ready=true" >> "$GITHUB_OUTPUT"
           fi
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0

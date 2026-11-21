@@ -2,7 +2,7 @@
 
 Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings
 
-Wenzhang Du · 开放研究报告 · v1.0.0 · 2026-11-21
+Wenzhang Du · 开放研究报告 · v1.0.1 · 2026-11-21
 
 两种方案各观察 23 个状态，编辑之间的两两重叠图相同。追踪重叠处是否指向同一座城市，会改变未见名录的嵌入重建误差。
 
@@ -35,7 +35,7 @@ Wenzhang Du · 开放研究报告 · v1.0.0 · 2026-11-21
 | E5 · Atomic | 0.01514 / 0.02367 | 98.15 / 96.80 |
 | E5 · Compressed | 0.29736 / 0.69517 | 93.63 / 77.83 |
 
-[数据来源](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.0/reference/primary_contrasts.csv)
+[数据来源](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/reference/primary_contrasts.csv)
 
 ## 查询目标会怎样改变判断？
 
@@ -47,11 +47,14 @@ Wenzhang Du · 开放研究报告 · v1.0.0 · 2026-11-21
 
 CPU 入口解码冻结的标量，先在每个世界内平均六个条件，再核验八项主比较，并以原来的 10,000 次配对抽样恢复 Qwen 的 512 世界区间。包内提供合成输入、观测方案、校准选择和排序实例。编码新的文本需要另外取得上游编码器。
 
+用原统计实现对 2,048 个配对世界做同一组自助抽样，可以恢复全部八项同时 95% 区间；整组的临界值为 2.70526。
+
 ```sh
 python -B verify_manifest.py
 python -B reproduce.py --out replay
+python -B check_methods.py
 ```
 
 ## 引用与材料
 
-[原版论文 · PDF](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf) · [固定版本与校验值](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.0) · [结果映射与复现范围](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.0/docs/reproduction.md) · [交互式证据浏览](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings)
+[原版论文 · PDF](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf) · [固定版本与校验值](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.1) · [结果映射与复现范围](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/docs/reproduction.md) · [交互式证据浏览](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings) · [方法源码与核验说明](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/docs/methods.md)

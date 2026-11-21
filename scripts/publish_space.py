@@ -12,8 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 NAME = "shared-value-embeddings"
 HUB = "DQSWORDMAN/" + NAME
 GITHUB = "https://github.com/dqswordman/" + NAME
-TAG = "v1.0.0"
-ASSET = NAME + "-v1.0.0.zip"
+TAG = "v1.0.1"
+ASSET = NAME + "-v1.0.1.zip"
 
 
 def git(*args):
@@ -56,7 +56,7 @@ def prepare(dest, local_zip):
             raise ValueError("ZIP exceeds publication limit")
         blob = local_zip.read_bytes()
     else:
-        release = json.loads(online("https://api.github.com/repos/dqswordman/"+NAME+"/releases/tags/v1.0.0",1_000_000))
+        release = json.loads(online("https://api.github.com/repos/dqswordman/"+NAME+"/releases/tags/v1.0.1",1_000_000))
         asset = next(a for a in release["assets"] if a["name"]==ASSET)
         blob = online(asset["browser_download_url"],100_000_000)
         if len(blob)!=asset["size"] or "sha256:"+digest(blob)!=asset["digest"]:

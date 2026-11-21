@@ -4,7 +4,7 @@
 
 Two 23-state observation plans differ in which city their edits share. On atomic text the shared-value plan reduces reconstruction error by 53.4% for BGE and 36.0% for E5.
 
-[Manuscript PDF](paper/manuscript.pdf) · [Technical report](https://dqswordman.github.io/technical-reports/shared-value-embeddings/) · [中文技术报告](https://dqswordman.github.io/zh/technical-reports/shared-value-embeddings/) · [Interactive explorer](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings) · [Download v1.0.0](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.0)
+[Manuscript PDF](paper/manuscript.pdf) · [Technical report](https://dqswordman.github.io/technical-reports/shared-value-embeddings/) · [中文技术报告](https://dqswordman.github.io/zh/technical-reports/shared-value-embeddings/) · [Interactive explorer](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings) · [Download v1.0.1](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.1)
 
 ![City swaps sharing one value compared with a cycle of pairwise-shared cities.](figures/design.png)
 
@@ -30,8 +30,16 @@ python -B reproduce.py --out replay
 
 For one worked example, run `python -B example.py`. The [reproduction guide](docs/reproduction.md) maps files to scientific claims. Both technical reports are available offline in [English](docs/report.en.md) and [中文](docs/report.zh.md).
 
+## Method implementation
+
+The [observation design](code/design_reference.py) and [rendering, relevance and ranking](code/query_reference.py) modules define the finite task. The [original paired inference implementation](code/paired_intervals.py) computes ordinary and simultaneous uncertainty. The CPU method check recovers the eight primary comparisons and their family-wise 95% intervals from the 2,048 world-level paired records using 10,000 shared draws.
+
+```sh
+python -B check_methods.py
+```
+
 ## Cite and reuse
 
-Wenzhang Du (2026). *Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings*. Open Research Reports, v1.0.0. [Manuscript](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf). [Machine-readable citation](CITATION.cff) · [BibTeX](citation.bib)
+Wenzhang Du (2026). *Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings*. Open Research Reports, v1.0.1. [Manuscript](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf). [Machine-readable citation](CITATION.cff) · [BibTeX](citation.bib)
 
 Wenzhang Du is the sole author. The attached PDF preserves the supplied anonymous title page. Original software uses the [MIT License](LICENSE). The author’s original report, figures, constructed data and measurements use [CC BY 4.0](licenses/CC-BY-4.0.txt). Third-party material retains its own terms and attribution. [Source notices](THIRD_PARTY_NOTICES.md)

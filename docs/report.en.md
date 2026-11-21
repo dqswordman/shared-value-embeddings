@@ -2,7 +2,7 @@
 
 Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings
 
-Wenzhang Du · Open Research Reports · v1.0.0 · 2026-11-21
+Wenzhang Du · Open Research Reports · v1.0.1 · 2026-11-21
 
 Two sets of 23 observations see the same pairwise overlap pattern. Following the identity of the shared city changes how well they reconstruct a held-out directory.
 
@@ -35,7 +35,7 @@ Manuscript Table 1. Each pair gives Star23 / Cycle23. R22 is a percentage.
 | E5 · Atomic | 0.01514 / 0.02367 | 98.15 / 96.80 |
 | E5 · Compressed | 0.29736 / 0.69517 | 93.63 / 77.83 |
 
-[Source table](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.0/reference/primary_contrasts.csv)
+[Source table](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/reference/primary_contrasts.csv)
 
 ## What happens when somebody asks a question?
 
@@ -47,11 +47,14 @@ The 23-state design, four-person directories and fixed checkpoints define this e
 
 The CPU entry decodes frozen scalar measurements, averages six conditions within each world and verifies the eight primary contrasts. It also reconstructs the paired 512-world Qwen interval with the original 10,000 draws. The archive includes synthetic inputs, observation designs, calibration choices and worked ranking records. Encoding new text requires the upstream encoders.
 
+Using the original inference code and shared bootstrap draws, the 2,048 paired worlds also reproduce all eight simultaneous 95% intervals. The family-wise critical value is 2.70526.
+
 ```sh
 python -B verify_manifest.py
 python -B reproduce.py --out replay
+python -B check_methods.py
 ```
 
 ## Citation and materials
 
-[Original manuscript · PDF](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf) · [Frozen release and checksums](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.0) · [Result map and reproduction scope](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.0/docs/reproduction.md) · [Interactive evidence explorer](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings)
+[Original manuscript · PDF](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf) · [Frozen release and checksums](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.1) · [Result map and reproduction scope](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/docs/reproduction.md) · [Interactive evidence explorer](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings) · [Method implementation and worked checks](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/docs/methods.md)

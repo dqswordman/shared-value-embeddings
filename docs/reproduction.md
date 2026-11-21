@@ -1,6 +1,6 @@
 # Reproducing the reported results
 
-**Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings** · Wenzhang Du · v1.0.0
+**Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings** · Wenzhang Du · v1.0.1
 
 ```sh
 python -m pip install -r requirements.txt
@@ -21,3 +21,9 @@ Run the commands at the root of the extracted archive with Python 3.12. CPU veri
 The archive stores the measured per-condition and per-world scalars used by the primary checks, fixed synthetic inputs, observation matrices, original analysis settings and the 512-world Qwen study. Individual rankings for the full primary BGE/E5 population and native hidden vectors are outside this distribution. Encoding new documents requires the pinned upstream checkpoints.
 
 The study concerns a finite synthetic directory and fixed encoders. Qwen uses a preselected subset of the original test pool. For a single worked case, run `python -B example.py`. [Original manuscript](../paper/manuscript.pdf) · [English report](report.en.md) · [中文报告](report.zh.md) · [Third-party terms](../THIRD_PARTY_NOTICES.md)
+
+## Method implementation
+
+The [observation design](../code/design_reference.py) and [rendering, relevance and ranking](../code/query_reference.py) modules define the finite task. The [original paired inference implementation](../code/paired_intervals.py) computes ordinary and simultaneous uncertainty. The CPU method check recovers the eight primary comparisons and their family-wise 95% intervals from the 2,048 world-level paired records using 10,000 shared draws.
+
+Run `python -B check_methods.py`. [Method guide](methods.md)

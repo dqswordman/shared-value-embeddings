@@ -1,5 +1,5 @@
 {
-  "distribution": "GitHub v1.0.0",
+  "distribution": "GitHub v1.0.1",
   "title": "Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings",
   "author": "Wenzhang Du",
   "files": [
@@ -11,7 +11,7 @@
     {
       "path": ".github/workflows/publish-hugging-face.yml",
       "size_bytes": 1523,
-      "sha256": "0c83d006acd02ab6566f5d1368bde142ca1ce8d84cd0533eb8284397747b4b02"
+      "sha256": "2fb9926709f7239cb6b5ac3f4c02b02d306905ba69f3b94f99ecdd3eee072507"
     },
     {
       "path": ".gitignore",
@@ -19,14 +19,19 @@
       "sha256": "b77c7eaaa5cebad124c73420774e5d580753c520267551cb2087e6132a9b59c5"
     },
     {
+      "path": "check_methods.py",
+      "size_bytes": 1747,
+      "sha256": "37dbf5d3890aa0083f31ccb5e675a64c47d5f6bb1017b9caf804f24cd0e692fc"
+    },
+    {
       "path": "citation.bib",
       "size_bytes": 326,
-      "sha256": "18dddffffbd0609a6ecc568a15dd806ef39e373b1bbba19cc524c5a5793aab31"
+      "sha256": "f37f1bdf1106917c6dd741d5c5c95ccbe387a5ffbd583c1b868caa52a829375f"
     },
     {
       "path": "CITATION.cff",
       "size_bytes": 791,
-      "sha256": "0f45847e72bb687871fc4ef3378dfca959330186c3a869604c14491891f9f55e"
+      "sha256": "6df666e2304a157339ebe82e2655a05a5d2e934d43dbbc8a5226ba65a66ecfb3"
     },
     {
       "path": "code/csv_codec.py",
@@ -37,6 +42,11 @@
       "path": "code/design_reference.py",
       "size_bytes": 17233,
       "sha256": "86a42e8bc8010a90d42c5005cfedaab183a4344631990a7d06b4f2e451e1dfcf"
+    },
+    {
+      "path": "code/paired_intervals.py",
+      "size_bytes": 3158,
+      "sha256": "186d988b642fe628b3eb8b4ed26e3e4a037e14c9b1a04cdcbe5f75450a30126d"
     },
     {
       "path": "code/query_reference.py",
@@ -110,23 +120,28 @@
     },
     {
       "path": "docs/companion.json",
-      "size_bytes": 11449,
-      "sha256": "5548e5dc70348d53763a90b10645cc7853d44819c53c781ff3719c2cb40c6f4a"
+      "size_bytes": 12243,
+      "sha256": "5c54365d81a56987458775bdf49dddd7e1b36eb80eabce1d7a29ff830bbabd54"
+    },
+    {
+      "path": "docs/methods.md",
+      "size_bytes": 615,
+      "sha256": "7a946308e96a3ad49823a57013a358763bd53d10e62cfd1338b82db2dc491e84"
     },
     {
       "path": "docs/report.en.md",
-      "size_bytes": 4548,
-      "sha256": "f06d2638a9edd997d219cbd3a07cf6d0a871fc5dbd17d3377028edada670b191"
+      "size_bytes": 4886,
+      "sha256": "9c08176b6e0158c93184c20a4534f43b3250dd44b37b67ee7dba826aa1e58942"
     },
     {
       "path": "docs/report.zh.md",
-      "size_bytes": 4111,
-      "sha256": "7f9c0acf5d16090a92305b1ce6bed86285a9fd1f959fa32eaccd5cdf94d6efef"
+      "size_bytes": 4402,
+      "sha256": "f09d327dd5e9db30790dba2107e589c7c1cff8539991a2c68275c0f814b29cae"
     },
     {
       "path": "docs/reproduction.md",
-      "size_bytes": 2177,
-      "sha256": "f3ea742fa975e570b03f971c77f8d54ed1a2ec61d10888bef37ee73649e01ab4"
+      "size_bytes": 2708,
+      "sha256": "0feb9d2abdd25cdb1c5228d48356135ee3e4cdd39f3a3374e7ad8b055b71f853"
     },
     {
       "path": "example.py",
@@ -215,8 +230,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 2838,
-      "sha256": "c0d7858a779f216666445d6c0d23f40d864eaac8dff6be28571f8f5ce92c5030"
+      "size_bytes": 3336,
+      "sha256": "76a2ca9a7aa3b2357502dcc5b5aa7dc60da192d77df1ad832cb7d3b2520f2780"
     },
     {
       "path": "reference/baseline_contrasts.csv",
@@ -301,7 +316,7 @@
     {
       "path": "scripts/publish_space.py",
       "size_bytes": 5650,
-      "sha256": "9599aa9988edee33a058e77abae56d8d4ef55aaecf816887844b9a3f61e63573"
+      "sha256": "8f19a40aaf1e3fd7f69c04bcd80c5660883912b5d1697795ae6f7c178611f2fd"
     },
     {
       "path": "space/app.js",
@@ -316,12 +331,12 @@
     {
       "path": "space/index.html",
       "size_bytes": 6073,
-      "sha256": "84573a77ca9be24533ed4ab05ad584c75779520919c4488f2f06ae19f5df72f3"
+      "sha256": "3614795e10d3f60a9ce6d812b79cf82116627c7d0471b9b29854d775fed868ef"
     },
     {
       "path": "space/README.md",
-      "size_bytes": 1616,
-      "sha256": "c6a93756f0c575977e9ab5d6029971c66a753bec04e1d5fc0429aa20aed540fc"
+      "size_bytes": 1724,
+      "sha256": "740b3e1217f21b71a125656693d3ba9ccf2e2704cbe59961bc5bb77c6afaa8a2"
     },
     {
       "path": "space/style.css",
