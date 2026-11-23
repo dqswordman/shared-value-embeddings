@@ -1,6 +1,6 @@
 ---
 title: Shared-value embeddings
-short_description: Explore reconstruction and retrieval in 2,048 test worlds
+short_description: Compare 23-state observation plans for text embeddings
 emoji: 🧭
 colorFrom: blue
 colorTo: gray
@@ -20,7 +20,7 @@ pinned: false
 
 **Wenzhang Du** · Open Research Reports · v1.0.1
 
-Two 23-state observation plans differ in which city their edits share. On atomic text the shared-value plan reduces reconstruction error by 53.4% for BGE and 36.0% for E5.
+Choose the encoder and text format to compare two plans that each observe 23 directory versions. One plan follows a city shared by three edits. Inspect both reconstruction error and the chance of identifying the correct version among 22 candidates.
 
 [Manuscript PDF](https://dqswordman.github.io/assets/reports/shared-value-embeddings/manuscript.pdf) · [Technical report](https://dqswordman.github.io/technical-reports/shared-value-embeddings/) · [中文技术报告](https://dqswordman.github.io/zh/technical-reports/shared-value-embeddings/) · [GitHub](https://github.com/dqswordman/shared-value-embeddings) · [Frozen release](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.1)
 

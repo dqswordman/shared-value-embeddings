@@ -2,7 +2,7 @@
 
 **Wenzhang Du** · [Open Research Reports](https://dqswordman.github.io/open-research/) · November 2026
 
-Two 23-state observation plans differ in which city their edits share. On atomic text the shared-value plan reduces reconstruction error by 53.4% for BGE and 36.0% for E5.
+Which 23 of 64 directory versions should an encoder observe? On 2,048 synthetic worlds, observing edits that share one city reduced normalized reconstruction error by 53.4% for BGE and 36.0% for E5 on atomic text, compared with a cycle of pairwise city overlaps.
 
 [Manuscript PDF](paper/manuscript.pdf) · [Technical report](https://dqswordman.github.io/technical-reports/shared-value-embeddings/) · [中文技术报告](https://dqswordman.github.io/zh/technical-reports/shared-value-embeddings/) · [Interactive explorer](https://huggingface.co/spaces/DQSWORDMAN/shared-value-embeddings) · [Download v1.0.1](https://github.com/dqswordman/shared-value-embeddings/releases/tag/v1.0.1)
 
@@ -10,7 +10,7 @@ Two 23-state observation plans differ in which city their edits share. On atomic
 
 ## Read the evidence
 
-Two sets of 23 observations see the same pairwise overlap pattern. Following the identity of the shared city changes how well they reconstruct a held-out directory. The study concerns a finite synthetic directory and fixed encoders. Qwen uses a preselected subset of the original test pool.
+Both designs use the same observation budget, target states and reconstruction rule. The difference is which triples of edits are observed. The tables report geometric error, identification of a directory version and retrieval of a requested fact separately. The Qwen check uses 512 preselected worlds from the original pool.
 
 | Result | Open the evidence |
 | --- | --- |
@@ -32,7 +32,7 @@ For one worked example, run `python -B example.py`. The [reproduction guide](doc
 
 ## Method implementation
 
-The [observation design](code/design_reference.py) and [rendering, relevance and ranking](code/query_reference.py) modules define the finite task. The [original paired inference implementation](code/paired_intervals.py) computes ordinary and simultaneous uncertainty. The CPU method check recovers the eight primary comparisons and their family-wise 95% intervals from the 2,048 world-level paired records using 10,000 shared draws.
+The [observation design](code/design_reference.py) defines which 23 states each plan sees. The [query code](code/query_reference.py) defines relevance for fact retrieval. Using the 2,048 paired worlds and the original 10,000 shared bootstrap draws, the [paired inference code](code/paired_intervals.py) reconstructs the eight primary contrasts and their simultaneous 95% intervals.
 
 ```sh
 python -B check_methods.py

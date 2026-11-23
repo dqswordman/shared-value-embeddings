@@ -1,32 +1,32 @@
-# Which 23 observations reveal an unseen embedding?
+# Which edits reveal the embedding of an unseen directory?
 
 Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings
 
-Wenzhang Du · Open Research Reports · v1.0.1 · 2026-11-21
+Wenzhang Du · Open Research Reports · v1.0.2 · 2026-11-22
 
-Two sets of 23 observations see the same pairwise overlap pattern. Following the identity of the shared city changes how well they reconstruct a held-out directory.
+Three edits can overlap in pairs even when no single city is shared by all three. Two designs each encode 23 of 64 possible directories. On 2,048 synthetic worlds written as individual facts, observing triples that share a city reduces reconstruction error by 53.4% for BGE and 36.0% for E5 relative to observing a cycle. Better reconstruction does not consistently improve fact retrieval.
 
 [Original PDF](../paper/manuscript.pdf) · [Online report](https://dqswordman.github.io/technical-reports/shared-value-embeddings/)
 
-## Follow the city shared by three edits
+## When three swaps draw the same triangle
 
-Imagine swapping Dublin with Accra in the residence field, Dublin with Seoul in the work field and Dublin with Athens in the study field. Every pair of swaps overlaps and Dublin belongs to all three. Change the last swap to Accra and Seoul. Every pair still overlaps, yet the three overlaps now refer to different cities. A graph recording only whether pairs meet draws the same triangle in both cases.
+Swap Dublin with Accra in the residence field, Dublin with Seoul in the work field and Dublin with Athens in the study field. All three swaps touch Dublin. Now replace only the last swap with Accra–Seoul. Every pair of swaps still touches a common city, but each pair meets at a different one. A diagram with one edge per overlapping pair shows the same triangle in both cases.
 
 ![City swaps sharing one value compared with a cycle of pairwise-shared cities.](../figures/design.png)
 
-Figure 1 contrasts two edit triples with identical pairwise overlap and different shared-value structure.
+Figure 1. In the star, one city belongs to all three swaps. In the cycle, each pair of swaps shares a different city. Counting the pairs that overlap gives the same answer in both panels.
 
-## Spend the same observation budget
+## Two ways to spend 23 observations
 
 Six binary edits define 64 versions of each four-person directory. Star23 and Cycle23 encode 23 states each and use the same quadratic reconstruction rule for the remaining states. The experiment varies which joint edits are observed while keeping the number of observations, target states and decoder fixed. Two renderings express the same facts as atomic sentences or compressed prose.
 
-The primary test uses 2,048 synthetic worlds with BGE-small and E5-small. Normalized mean squared error measures approximation in the native representation space. R22 asks whether the reconstructed embedding retrieves the exact state in a 22-state candidate gallery. Balanced query ranking asks whether the representation helps retrieve facts; it can move differently from either geometry measure.
+BGE-small and E5-small encode 2,048 synthetic test worlds. Three measures answer different questions. Normalized mean squared error measures distance to the true embedding. R22 asks whether the reconstruction identifies the correct directory among 22 candidates. Balanced query ranking asks whether a user seeking a fact retrieves the right record.
 
-## Reconstruction and exact-state retrieval
+## A shared city improves reconstruction for both encoders
 
-Star23 has lower reconstruction error in all four encoder–rendering combinations. Relative reductions on atomic text are 53.4% for BGE and 36.0% for E5. On compressed records, exact-state retrieval improves by 15.45 and 15.80 percentage points, respectively. In the separate Qwen3-Embedding-0.6B atomic-text comparison, 512 preselected worlds yield a 6.58% relative error reduction.
+Across both text formats and both encoders, Star23 gives lower normalized reconstruction error than Cycle23. On records written as individual sentences, the relative reductions are 53.4% for BGE and 36.0% for E5. On compressed records the probability of identifying the exact state rises by 15.45 and 15.80 percentage points, respectively. In a separate atomic-text check on 512 preselected worlds from the same pool, Qwen3-Embedding-0.6B shows a 6.58% relative error reduction.
 
-Manuscript Table 1. Each pair gives Star23 / Cycle23. R22 is a percentage.
+For each encoder and rendering, the left value is Star23 and the right value is Cycle23. Lower normalized mean squared error (NMSE) indicates closer reconstruction. Higher R22 means more correct identifications among 22 candidate states. Manuscript Table 1.
 
 | Encoder · text | NMSE | R22 (%) |
 | --- | --- | --- |
@@ -37,15 +37,15 @@ Manuscript Table 1. Each pair gives Star23 / Cycle23. R22 is a percentage.
 
 [Source table](https://github.com/dqswordman/shared-value-embeddings/blob/v1.0.1/reference/primary_contrasts.csv)
 
-## What happens when somebody asks a question?
+## Recovering the directory and finding a fact are different tasks
 
-On atomic BGE text, same-entity queries gain 0.12424 percentage points of nDCG@5 and different-entity queries lose 0.03569. Compressed E5 provides a sharper example: state identity improves by 15.80 points while balanced query ranking falls by 0.03542 percentage points. Choosing observations for an indexing task therefore requires specifying what users will retrieve.
+On BGE embeddings of atomic text, nDCG@5 rises by 0.12424 percentage points for same-entity queries and falls by 0.03569 points for different-entity queries. On compressed E5 text, the shared-city design identifies the right directory 15.80 points more often, yet balanced query nDCG@5 falls by 0.03542 percentage points. An index chosen for state identification therefore still needs evaluation on the queries it will serve.
 
 The 23-state design, four-person directories and fixed checkpoints define this evidence. The Qwen comparison reuses a subset of the same world pool. Natural documents, larger edit systems and additional independent pools would test how far the shared-value pattern extends.
 
-## Reconstruct the result on CPU
+## Recalculate the paired differences by world
 
-The CPU entry decodes frozen scalar measurements, averages six conditions within each world and verifies the eight primary contrasts. It also reconstructs the paired 512-world Qwen interval with the original 10,000 draws. The archive includes synthetic inputs, observation designs, calibration choices and worked ranking records. Encoding new text requires the upstream encoders.
+The CPU replay reads the released scalar measurements and averages the six conditions within each world before comparing designs. It verifies the eight primary contrasts and reconstructs the paired interval for 512 Qwen worlds using the original 10,000 bootstrap draws. The archive supplies the synthetic inputs, observation designs, calibration choices and saved rankings. Encoding new text requires the corresponding encoder.
 
 Using the original inference code and shared bootstrap draws, the 2,048 paired worlds also reproduce all eight simultaneous 95% intervals. The family-wise critical value is 2.70526.
 

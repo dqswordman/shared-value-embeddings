@@ -1,5 +1,5 @@
 {
-  "distribution": "GitHub v1.0.1",
+  "distribution": "GitHub main · research artifact v1.0.1, revised web companion",
   "title": "Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings",
   "author": "Wenzhang Du",
   "files": [
@@ -120,28 +120,28 @@
     },
     {
       "path": "docs/companion.json",
-      "size_bytes": 12243,
-      "sha256": "5c54365d81a56987458775bdf49dddd7e1b36eb80eabce1d7a29ff830bbabd54"
+      "size_bytes": 13657,
+      "sha256": "8a3848727d73f8e2ccc17210c1b6e720f1e0bb4e0f332c2e7d5d3d8a3f2d9abd"
     },
     {
       "path": "docs/methods.md",
-      "size_bytes": 615,
-      "sha256": "7a946308e96a3ad49823a57013a358763bd53d10e62cfd1338b82db2dc491e84"
+      "size_bytes": 564,
+      "sha256": "dcee1e1cc6238ddfbeeb7a10bc65e13e810452b4d5d835c4d75d60566d03dd8a"
     },
     {
       "path": "docs/report.en.md",
-      "size_bytes": 4886,
-      "sha256": "9c08176b6e0158c93184c20a4534f43b3250dd44b37b67ee7dba826aa1e58942"
+      "size_bytes": 5560,
+      "sha256": "709e70d49749da6d7f22f7dc9c8075c238ba9097848d82615924719bef3d5ffd"
     },
     {
       "path": "docs/report.zh.md",
-      "size_bytes": 4402,
-      "sha256": "f09d327dd5e9db30790dba2107e589c7c1cff8539991a2c68275c0f814b29cae"
+      "size_bytes": 5097,
+      "sha256": "20f377f4ddfbbef3162bfe2b903eed19b7bcbc7787cf51ca4f629d96dcce68f8"
     },
     {
       "path": "docs/reproduction.md",
-      "size_bytes": 2708,
-      "sha256": "0feb9d2abdd25cdb1c5228d48356135ee3e4cdd39f3a3374e7ad8b055b71f853"
+      "size_bytes": 3077,
+      "sha256": "10ddca37a9c0ecfc65e07df4d6702c343b6de996fd26a21c8672d1947ac1f90c"
     },
     {
       "path": "example.py",
@@ -230,8 +230,8 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 3336,
-      "sha256": "76a2ca9a7aa3b2357502dcc5b5aa7dc60da192d77df1ad832cb7d3b2520f2780"
+      "size_bytes": 3411,
+      "sha256": "57a4b1bcf8468e701478e6528e87e09376b2505cd374e8bac2295db6b4a663eb"
     },
     {
       "path": "reference/baseline_contrasts.csv",
@@ -330,13 +330,13 @@
     },
     {
       "path": "space/index.html",
-      "size_bytes": 6073,
-      "sha256": "3614795e10d3f60a9ce6d812b79cf82116627c7d0471b9b29854d775fed868ef"
+      "size_bytes": 6191,
+      "sha256": "cbd213e124078e62ee629e2a32da8e70b865a829a73a33ec9e2e7000fb0f5eda"
     },
     {
       "path": "space/README.md",
-      "size_bytes": 1724,
-      "sha256": "740b3e1217f21b71a125656693d3ba9ccf2e2704cbe59961bc5bb77c6afaa8a2"
+      "size_bytes": 1798,
+      "sha256": "20f35897b360bbd409fed41eff19876f876084b42bec806b64dd5fc85a5a7571"
     },
     {
       "path": "space/style.css",

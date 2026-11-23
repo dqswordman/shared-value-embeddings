@@ -2,6 +2,8 @@
 
 **Beyond Pairwise Overlap: Shared-Value Observations for Compositional Text Embeddings** · Wenzhang Du · v1.0.1
 
+The independent unit is a synthetic world. The replay groups each world’s measurements together before comparing observation plans, and uses shared bootstrap draws for their uncertainty intervals. Use the same released measurements to inspect state identification and query ranking separately.
+
 ```sh
 python -m pip install -r requirements.txt
 python -B verify_manifest.py
@@ -20,7 +22,7 @@ Run the commands at the root of the extracted archive with Python 3.12. CPU veri
 
 The archive stores the measured per-condition and per-world scalars used by the primary checks, fixed synthetic inputs, observation matrices, original analysis settings and the 512-world Qwen study. Individual rankings for the full primary BGE/E5 population and native hidden vectors are outside this distribution. Encoding new documents requires the pinned upstream checkpoints.
 
-The study concerns a finite synthetic directory and fixed encoders. Qwen uses a preselected subset of the original test pool. For a single worked case, run `python -B example.py`. [Original manuscript](../paper/manuscript.pdf) · [English report](report.en.md) · [中文报告](report.zh.md) · [Third-party terms](../THIRD_PARTY_NOTICES.md)
+The primary comparison pairs 2,048 synthetic worlds. A 512-world Qwen check uses a preselected subset. Finding a fact in the directory is evaluated separately from identifying the directory itself. For a single worked case, run `python -B example.py`. [Original manuscript](../paper/manuscript.pdf) · [English report](report.en.md) · [中文报告](report.zh.md) · [Third-party terms](../THIRD_PARTY_NOTICES.md)
 
 ## Method implementation
 
